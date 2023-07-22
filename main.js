@@ -77,7 +77,7 @@ btn1.onclick=()=>{
   {
     div.innerHTML=`
     
-    ${text}
+    <p id="text"></p>
     
     
     
