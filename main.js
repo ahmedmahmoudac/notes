@@ -40,7 +40,7 @@ btn1.onclick=()=>{
   {
     div.innerHTML=`
     
-    <p id="text"></p>
+    
     
     <br>
     
