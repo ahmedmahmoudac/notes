@@ -1,90 +1,143 @@
-let int = document.querySelector('#in');
-let btn1 = document.querySelector('#btn1');
-let noon = document.querySelector('#noon');
-let btn2 = document.querySelector('#btn2');
+let int = document.querySelector('#in')
+let btn1 = document.querySelector('#btn1')
+let noon = document.querySelector('#noon')
+let btn2 = document.querySelector('#btn2')
 
-let src = '';
+let src=''
 
-localStorage.setItem("srcc", '');
 
-// Function to escape special HTML characters
-function escapeHTML(str) {
-  return str.replace(/[&<>]/g, function (tag) {
-    return {
-      '&': '&amp;',
-      '<': '&lt;',
-      '>': '&gt;'
-    }[tag] || tag;
-  });
-}
 
-// Save in local storage
+
+
+localStorage.setItem("srcc", '')
+
+
+
+//save in local storage
 function save() {
   let G = noon.innerHTML;
   localStorage.setItem("N", `${G}`);
-}
-
-// Btn for add note and save in local storage
-btn1.onclick = () => {
-  text = int.value;
-  src = localStorage.getItem("srcc");
   
-  if (text !== "" && text.trim() !== '' || src !== '' && text.trim() !== '' || src !== '' && text.trim() === '') {
-    let div = document.createElement('div');
-    div.id = 'd1';
-    
-    if (src !== '' && text.trim() !== '') {
-      div.innerHTML = `
-        <p id="text"></p>
-        <br>
-        <img src="${src}" id="img0">
-        <button id="clear" class="dd" onclick="M()"></button>
-        <div>
-          <button class="ooo" onclick="K()"></button>
-        </div>
-        <p id='date'></p>
-        <div id="btn-copy" onclick="copy()">
-          <span>Copy</span>
-        </div>
-        <div id="btn-edit" onclick="edit()">
-          <span>Edit</span>
-        </div>
-      `;
-      div.childNodes[1].textContent = escapeHTML(text);
-      div.childNodes[1].style = `margin: 30px 10px 10px`;
-    } else if (src === '' && text.trim() !== '') {
-      div.innerHTML = `
-        <p id="text"></p>
-        <button id="clear" class="dd" onclick="L()"></button>
-        <div>
-          <button class="ooo" onclick="K()"></button>
-        </div>
-        <p id='date'></p>
-        <div id="btn-copy" onclick="copy()">
-          <span>Copy</span>
-        </div>
-        <div id="btn-edit" onclick="edit()">
-          <span>Edit</span>
-        </div>
-      `;
-      div.childNodes[1].textContent = escapeHTML(text);
-    } else if (src !== '' && text.trim() === '') {
-      div.innerHTML = `
-        <img src="${src}" id="img0">
-        <button id="clear" class="dd" onclick="M()"></button>
-        <div>
-          <button class="ooo" onclick="K()"></button>
-        </div>
-        <p id='date'></p>
-      `;
-      div.childNodes[1].style = `margin: 25px 0;`;
-    }
-
-    if (noon.innerHTML === '') {
-      noon.appendChild(div);
-    } else {
-      noon.firstChild.before(div);
 }
+//end save
+
+
+
+
+//btn for add note and save in local storage
+btn1.onclick=()=>{
+  
+  text=int.value;
+  
+  src = localStorage.getItem("srcc")
+  
+  if (text !== ""&&text.trim()!==''|| src!==''&&text.trim()!==''||src!==''&&text.trim()==''){
+    
+  let div=document.createElement('div');
+  div.id='d1';
+  
+  if (src!==''&&text.trim()!=='')
+  {
+    div.innerHTML=`
+    
+    <p id="text"></p>
+    
+    <br>
+    
+    <img src="${src}" id="img0">
+    
+    <button id="clear" class="dd" onclick="M()"></button>
+    
+    <div>
+    <button class="ooo" onclick="K()">
+      
+    </button>
+    </div>
+    
+    
+    <p id='date'></p>
+    
+    <div id="btn-copy" onclick="copy()">
+        <span>Copy</span>
+    </div>
+    
+    
+    <div id="btn-edit" onclick="edit()">
+        <span>Edit</span>
+    </div>
+    
+    
+    
+    `
+    
+    div.childNodes[1].textContent=`${text}`
+    div.childNodes[1].style=`margin: 30px 10px 10px`
+    
+  } else if (src==''&&text.trim()!=='')
+  {
+    div.innerHTML=`
+    
+    
+    <p id="text"></p>
+    
+    
+    <button id="clear" class="dd" onclick="L()"></button>
+    
+    
+    <div>
+    <button class="ooo" onclick="K()">
+      
+    </button>
+    </div>
+    
+    
+    <p id='date'></p>
+    
+    
+    <div id="btn-copy" onclick="copy()">
+      <span>Copy</span>
+    </div>
+    
+    
+    <div id="btn-edit" onclick="edit()">
+      <span>Edit</span>
+    </div>
+    
+    `
+    
+  
+   div.childNodes[1].textContent=`${text}`
+    
+  } else if(src!==''&&text.trim()=='')
+  {
+  
+    div.innerHTML=`
+    
+    <img src="${src}" id="img0">
+    
+    <button id="clear" class="dd" onclick="M()"></button>
+    
+    <div>
+    <button class="ooo" onclick="K()">
+      
+    </button>
+    </div>
+    
+    
+    <p id='date'></p>
+    
+    `
+    
+    div.childNodes[1].style=`margin: 25px 0;`
+    
+  }
+  
+
+    if (noon.innerHTML==''){
+      noon.appendChild(div);
+    } else{
+      noon.firstChild.before(div);
+    }
     
   }
   
