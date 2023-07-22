@@ -31,7 +31,7 @@ btn1.onclick=()=>{
   
   src = localStorage.getItem("srcc")
   
-  if (text !== ""&&text.trim()!==''|| src!==''&&text.trim()!==''||src!==''&&text.trim()==''){
+  if (text1 !== ""&&text1.trim()!==''|| src!==''&&text.trim()!==''||src!==''&&text.trim()==''){
     
   let div=document.createElement('div');
   div.id='d1';
