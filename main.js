@@ -22,7 +22,16 @@ function save() {
 //end save
 
 
-
+// Function to escape special HTML characters
+function escapeHTML(str) {
+  return str.replace(/[&<>]/g, function (tag) {
+    return {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;'
+    }[tag] || tag;
+  });
+}
 
 //btn for add note and save in local storage
 btn1.onclick=()=>{
@@ -69,8 +78,8 @@ btn1.onclick=()=>{
     
     
     `
-    
-    div.childNodes[1].textContent=`${text}`
+    div.childNodes[1].textContent = escapeHTML(text);
+   // div.childNodes[1].textContent=`${text}`
     div.childNodes[1].style=`margin: 30px 10px 10px`
     
   } else if (src==''&&text.trim()!=='')
