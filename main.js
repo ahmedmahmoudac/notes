@@ -36,11 +36,11 @@ btn1.onclick=()=>{
   let div=document.createElement('div');
   div.id='d1';
   
-  if (src!==''&&text1.trim()!=='')
+  if (src!==''&&text.trim()!=='')
   {
     div.innerHTML=`
     
-    <p id="text1"></p>
+    <p id="text"></p>
     
     <br>
     
@@ -78,7 +78,7 @@ btn1.onclick=()=>{
     div.innerHTML=`
     
     
-    <p id="text"></p>
+    //<p id="text"></p>
     
     
     <button id="clear" class="dd" onclick="L()"></button>
