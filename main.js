@@ -75,10 +75,10 @@ btn1.onclick=()=>{
     
   } else if (src==''&&text.trim()!=='')
   {
- //   div.innerHTML=`
+    div.innerHTML=`
     
     
-//    <p id="text"></p>
+    <p id="text"></p>
     
     
     <button id="clear" class="dd" onclick="L()"></button>
