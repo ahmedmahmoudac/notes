@@ -31,16 +31,16 @@ btn1.onclick=()=>{
   
   src = localStorage.getItem("srcc")
   
-  if (text1 !== ""&&text1.trim()!==''|| src!==''&&text.trim()!==''||src!==''&&text.trim()==''){
+  if (text !== ""&&text.trim()!==''|| src!==''&&text.trim()!==''||src!==''&&text.trim()==''){
     
   let div=document.createElement('div');
   div.id='d1';
   
-  if (src!==''&&text.trim()!=='')
+  if (src!==''&&text1.trim()!=='')
   {
     div.innerHTML=`
     
-    <p id="text"></p>
+    <p id="text1"></p>
     
     <br>
     
